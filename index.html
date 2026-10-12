@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f6f5f0">
+  <title>PlayLab — a little playground for your brain</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" id="homeLink" aria-label="PlayLab home"><span class="brand-mark">✳</span> PlayLab</a>
+    <div class="top-actions">
+      <label class="search-wrap"><span>⌕</span><input id="searchInput" type="search" placeholder="Find a game…" aria-label="Search games"></label>
+      <button class="icon-button" id="soundToggle" title="Toggle sound" aria-label="Toggle sound">♫</button>
+      <button class="icon-button" id="themeToggle" title="Toggle theme" aria-label="Toggle theme">☾</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="homeView">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="live-dot"></span> YOUR BROWSER, YOUR PLAYGROUND</p>
+          <h1>A little fun.<br><span>A lot of curiosity.</span></h1>
+          <p class="hero-description">Tiny games, curious experiments, and delightful ways to spend five minutes. Pick something and jump right in.</p>
+          <a href="#gameGrid" class="primary-link">Find your next game <span>↘</span></a>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+          <div class="float-shape shape-star">✳</div><div class="float-shape shape-circle"></div>
+          <div class="float-shape shape-square"></div><div class="float-shape shape-squiggle">〰</div>
+          <div class="hero-note">curiosity<br>looks good on you</div>
+        </div>
+      </section>
+
+      <section class="section-heading">
+        <div><p class="eyebrow">THE COLLECTION</p><h2>Choose your kind of fun<span class="period">.</span></h2></div>
+        <p class="game-count"><strong id="visibleCount">18</strong> experiments to explore</p>
+      </section>
+      <nav class="filters" id="filters" aria-label="Game categories">
+        <button class="filter active" data-category="All">All games <span>18</span></button>
+        <button class="filter" data-category="Arcade">Arcade</button>
+        <button class="filter" data-category="Brain">Brain & puzzles</button>
+        <button class="filter" data-category="Creative">Creative</button>
+        <button class="filter" data-category="Curiosity">Curiosity</button>
+      </nav>
+      <section class="game-grid" id="gameGrid" aria-live="polite"></section>
+      <p class="no-results hidden" id="noResults">No games found. Try another search.</p>
+      <footer><span class="footer-mark">✳</span><span>Made for curious minds.</span><span class="footer-right">PlayLab · 18 little adventures</span></footer>
+    </section>
+
+    <section id="gameView" class="game-view hidden">
+      <button class="back-link" id="backHome">← All games</button>
+      <div class="game-header">
+        <div><p class="eyebrow" id="gameCategory">MINI GAME</p><h1 id="gameTitle">The Big Clicker</h1><p id="gameDescription" class="game-description"></p></div>
+        <div class="best-score">PERSONAL BEST <strong id="bestScore">—</strong></div>
+      </div>
+      <div id="gameStage" class="game-stage"></div>
+      <div class="game-bottom"><span id="gameHint">Have fun experimenting.</span><button id="restartGame" class="text-button">↻ Restart game</button></div>
+    </section>
+  </main>
+  <div id="toast" class="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
